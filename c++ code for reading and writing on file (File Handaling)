@@ -1,0 +1,33 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+int main(){
+
+ifstream ifile;
+ofstream ofile;
+
+ofile.open("test.txt",ios::out);
+if(ofile.is_open()){
+   cout<<"Hello, This is a file program"<<endl;
+   cout<<"End of file"<<endl;
+}else{
+    cout<<"unable to open file"<<endl;
+}
+ofile.close();
+
+ofile.open("test.txt");
+ofile<<"It is a c++ code ";
+ofile.close();
+
+string line;
+ifile.open("test.txt", ios::in);
+while(!ifile.eof()){
+    ifile>>line;
+    cout<<line<<" ";
+}
+ifile.close();
+
+
+return 0;
+}
