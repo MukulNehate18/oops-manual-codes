@@ -1,7 +1,7 @@
 //Program to demonstrate various operations on Complex class
 #include<iostream>
 using namespace std;
-class Complex.                                {
+class Complex {
 float real,img;
 public:
 //Constructor
@@ -46,7 +46,8 @@ out << c.real<<" + "<< c.img<<" i";
 return out;
 }
 //overloaded extraction (>>) opertor for class Complex
-friend istream &operator>>(istream &in, Complex &c) in>> c.real>>c.img;
+friend istream &operator>>(istream &in, Complex &c){
+    cin>> c.real>>c.img;
 return in;
 }
 };
