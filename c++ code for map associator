@@ -1,0 +1,29 @@
+#include <iostream>
+#include <map>
+
+int main() {
+    // Define and initialize the map with state populations
+    std::map<std::string, int> statePopulations = {
+        {"California", 39576757},
+        {"Texas", 29145505},
+        {"Florida", 21538187},
+        // Add more states as needed
+    };
+
+    // Prompt the user to enter a state name
+    std::cout << "Enter the name of a state: ";
+    std::string userInput;
+    std::getline(std::cin, userInput);
+
+    // Search for the entered state in the map
+    auto it = statePopulations.find(userInput);
+
+    // Check if the state was found
+    if (it != statePopulations.end()) {
+        std::cout << "Population of " << userInput << ": " << it->second << std::endl;
+    } else {
+        std::cout << "State not found in the map." << std::endl;
+    }
+
+    return 0;
+}
